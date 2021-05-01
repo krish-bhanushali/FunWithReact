@@ -31,9 +31,12 @@ const Content = () => {
     useEffect(()=> {
             window.localStorage.setItem('theme', currentTheme)
     },[currentTheme])
-
+    //simple animated opacity to play around
     return ( <div>
-        <ContentSpace>
+        <ContentSpace  animate={{ opacity:1}}
+    initial={{ opacity:0}
+}
+    transition={{duration:1,ease : [.6,.05,-.01,.9]}}>
             <Container>
                 <Flex spaceBetween noHeight>
                 <Logo>

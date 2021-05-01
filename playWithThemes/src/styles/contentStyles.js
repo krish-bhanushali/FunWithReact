@@ -1,7 +1,9 @@
 import styled from "styled-components"
+import {motion} from "framer-motion"
 
 
-export const ContentSpace = styled.div`
+//simply wrapping it to make the div animated
+export const ContentSpace = styled(motion.div)`
 height: 0px;
 width: 100%;
 position: absolute;
