@@ -11,6 +11,11 @@ import {normalize} from 'styled-normalize';
 
 
 
+//Components
+import Content from "./Content"
+
+
+
 //global Style you can set your fonts and background here
 //we access the props by theme provider 
 const GlobalStyle = createGlobalStyle`
@@ -67,8 +72,9 @@ const Layout = ({ children }) => {
   }
 
   return (<>
-  <ThemeProvider theme={darkTheme}>
+  <ThemeProvider theme={lightTheme}>
   <GlobalStyle></GlobalStyle>
+  <Content/>
   <main>{children}</main>
   </ThemeProvider>
  
