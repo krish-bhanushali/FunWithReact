@@ -14,6 +14,10 @@ import {normalize} from 'styled-normalize';
 //Components
 import Content from "./Content"
 
+//Created hook to access the storage of our current theme
+import {useGlobalStateContext} from '../context/globalContext'
+
+
 
 
 //global Style you can set your fonts and background here
@@ -70,9 +74,9 @@ const Layout = ({ children }) => {
     text:'#000',
  
   }
-
+  const {currentTheme} = useGlobalStateContext()
   return (<>
-  <ThemeProvider theme={lightTheme}>
+  <ThemeProvider  theme={currentTheme === 'dark' ? darkTheme : lightTheme }>
   <GlobalStyle></GlobalStyle>
   <Content/>
   <main>{children}</main>

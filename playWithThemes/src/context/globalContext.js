@@ -20,7 +20,12 @@ const globalReducer = (state, action) => {
     }
 }
 
+
+//LocalStorage to remember which theme was hence on refresh the browser can know the predefinied theme
+
 export const GlobalProvider = ( {children}) => {
+
+    //default theme is dark
     const [state, dispatch] = useReducer(globalReducer, {
         currentTheme : window.localStorage.getItem('theme') == null ? 'dark' : window.localStorage.getItem('theme')
     })
